@@ -74,8 +74,8 @@ L.Control.Radar = L.Control.extend({
             this.container
         );
 
-        this.setDisabled(true);
-        this.isPaused = true;
+        this.setDisabled(false);
+        this.isPaused = false;
 
         return this.container;
     },
