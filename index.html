@@ -80,7 +80,7 @@
 
     //image overlay
 var imageUrl = 'https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&TILED=true&LAYERS=conus_bref_qcd&TIME=2024-04-28T18%3A46%3A06.000Z&WIDTH=512&HEIGHT=512&SRS=EPSG%3A3857&BBOX=-11271098.44281895%2C3130860.6785608195%2C-10644926.307106787%2C3757032.8142729835',
-imageBounds = [[-11271098.44281895, -180], [-11271098.44281895, 180]];
+imageBounds = [[0, -180], [0, 180]];
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 
