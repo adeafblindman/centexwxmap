@@ -60,6 +60,10 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- radar -->
+<link rel="stylesheet" href="src/leaflet-radar.css"></script>
+                <script src="src/leaflet-radar.js"></script>
+  
 </head>
 
 <body>
@@ -79,9 +83,9 @@
 
 
     //image overlay
-var imageUrl = 'https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&TILED=true&LAYERS=conus_bref_qcd&TIME=2024-04-28T18%3A46%3A06.000Z&WIDTH=512&HEIGHT=512&SRS=EPSG%3A3857&BBOX=-11271098.44281895%2C3130860.6785608195%2C-10644926.307106787%2C3757032.8142729835',
-imageBounds = [[31.5402937, -97.2802021], [31.5402937, -97.2802021]];
-L.imageOverlay(imageUrl, imageBounds).addTo(map);
+//var imageUrl = 'https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&TILED=true&LAYERS=conus_bref_qcd&TIME=2024-04-28T18%3A46%3A06.000Z&WIDTH=512&HEIGHT=512&SRS=EPSG%3A3857&BBOX=-11271098.44281895%2C3130860.6785608195%2C-10644926.307106787%2C3757032.8142729835',
+//imageBounds = [[31.5402937, -97.2802021], [31.5402937, -97.2802021]];
+//L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 
 
