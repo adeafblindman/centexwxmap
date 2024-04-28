@@ -121,7 +121,7 @@ L.Control.Radar = L.Control.extend({
             this.timeLayerIndex = +this.slider.value;
             this.showLayerByIndex(this.timeLayerIndex);
 
-            this.isPaused = true;
+            this.isPaused = false;
         };
 
         this.setTransitionTimer();
