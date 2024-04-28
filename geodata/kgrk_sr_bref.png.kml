@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd">
+
+<Folder><LookAt id="superoverlay">
+<longitude>-101.25</longitude>
+<latitude>34.25607962663468</latitude>
+<altitude>0</altitude>
+<heading>0</heading>
+<tilt>0</tilt>
+<range>3196294.055220559</range>
+<altitudeMode>clampToGround</altitudeMode>
+</LookAt>
+
+<NetworkLink><name>Super-overlay: kgrk_sr_bref</name>
+<Region>
+<LatLonAltBox><north>45.0</north><south>22.5</south><east>-90.0</east><west>-112.5</west></LatLonAltBox>
+<Lod><minLodPixels>128</minLodPixels>
+<maxLodPixels>-1</maxLodPixels></Lod>
+</Region>
+<Link><href>https://opengeo.ncep.noaa.gov/geowebcache/service/kml/kgrk_sr_bref/x3y5z3.png.kml</href>
+<viewRefreshMode>onRegion</viewRefreshMode>
+</Link>
+</NetworkLink>
+</Folder>
+</kml>
