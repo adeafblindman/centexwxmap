@@ -45,7 +45,7 @@ L.Control.Radar = L.Control.extend({
         this.checkbox = document.createElement(`input`);
         this.checkbox.id = `leaflet-radar-toggle`;
         this.checkbox.type = `checkbox`;
-        this.checkbox.checked = false;
+        this.checkbox.checked = true;
         this.checkbox.onclick = () => this.toggle();
 
         checkbox_div.appendChild(this.checkbox);
