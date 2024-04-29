@@ -227,3 +227,19 @@ L.Control.Radar = L.Control.extend({
 L.control.radar = function (options) {
     return new L.Control.Radar(options);
 };
+
+
+.leaflet-container {
+	background: #ddd;
+	outline: 0;
+	}
+.leaflet-container a {
+	color: #0078A8;
+	}
+.leaflet-container a.leaflet-active {
+	outline: 2px solid orange;
+	}
+.leaflet-zoom-box {
+	border: 2px dotted #38f;
+	background: rgba(255,255,255,0.5);
+	}
