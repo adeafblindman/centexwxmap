@@ -17,7 +17,6 @@ L.Control.Radar = L.Control.extend({
         transitionMs: 750,
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
-        //refreshTime: 5
     },
 
     onRemove: function () {
@@ -46,7 +45,7 @@ L.Control.Radar = L.Control.extend({
         this.checkbox = document.createElement(`input`);
         this.checkbox.id = `leaflet-radar-toggle`;
         this.checkbox.type = `checkbox`;
-        this.checkbox.checked = true;
+        this.checkbox.checked = false;
         this.checkbox.onclick = () => this.toggle();
 
         checkbox_div.appendChild(this.checkbox);
@@ -75,14 +74,10 @@ L.Control.Radar = L.Control.extend({
             this.container
         );
 
-        this.setDisabled(false);
-        this.isPaused = false;
+        this.setDisabled(true);
+        this.isPaused = true;
 
         return this.container;
-
-        
-
-        
     },
 
     hideLayerByIndex: function (index) {
@@ -104,7 +99,7 @@ L.Control.Radar = L.Control.extend({
 
     toggle: function () {
         if (!this.checkbox.checked) {
-            this.setDisabled(false);
+            this.setDisabled(true);
             this.removeLayers();
             return;
         }
@@ -126,7 +121,7 @@ L.Control.Radar = L.Control.extend({
             this.timeLayerIndex = +this.slider.value;
             this.showLayerByIndex(this.timeLayerIndex);
 
-            this.isPaused = false;
+            this.isPaused = true;
         };
 
         this.setTransitionTimer();
@@ -232,6 +227,3 @@ L.Control.Radar = L.Control.extend({
 L.control.radar = function (options) {
     return new L.Control.Radar(options);
 };
-
-
-
