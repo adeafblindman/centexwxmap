@@ -25678,13 +25678,13 @@ var geojson = {
 };
 
 var countyStyle = {
-    "color": "feature.properties.fill",
     "weight": 5,
     "opacity": 0.2
 };
 	
 L.geoJSON(geojson, {
 	style: countyStyle
+		return{ color: feature.properties.fill};
 }).addTo(map);
 	
 </script>		
