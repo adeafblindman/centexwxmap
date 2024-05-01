@@ -25666,14 +25666,14 @@ var geojson = {
   ]
 };
 
-var myStyle = {
-    "color": "#ff7800",
+var countyStyle = {
+    "color": "feature.properties.fill",
     "weight": 5,
-    "opacity": 0.65
+    "opacity": 0.2
 };
 	
 L.geoJSON(geojson, {
-	style: myStyle
+	style: countyStyle
 }).addTo(map);
 	
 </script>		
