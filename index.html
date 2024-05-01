@@ -59,16 +59,20 @@ geojsonLayer.addTo(map);
 
 <script>
 	// new json code
-new L.GeoJSON.Style(
-	<geodata/COUNTIES no fill.geojson>, // <String> geoJson features
+new L.GeoJSON.Ajax(
+	<geodata/COUNTIES no fill.geojson>, // GeoJson server URL or function that returns the URL
 	{
-		<OPTIONS>,
-		"<NAME>": <VALUE>, // Optional: Properties pairs that will overwrite the geoJson flow features properties
+		
+		}
+		bbox: <boolean>, // Optional: whether or not add bbox arg to the geoJson server URL
+		autosetBounds: <boolean>, // Default: false. Automatically zooms to extend of loaded data. Only applies when bbox is not set.
 		style: function(feature) { // Optional
 			return {
-				fill: feature.properties.fill
+				fill: feature.properties.fill,
+				fill-opacity: feature.properties.fill-opacity
 			};
 		}
+		idAjaxStatus: optional html element #id that will be updated during loading of the map
 	}
 ).addTo(map);
 
