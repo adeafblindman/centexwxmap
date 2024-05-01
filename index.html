@@ -49,16 +49,28 @@ return {
 }
 
 </script> 
+		
 <script> 
+	// county polygon
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
 geojsonLayer.addTo(map);
 
-</script>        
+</script>       
+	
 <script> 
+	// fort cavazos polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
 geojsonLayer.addTo(map);
 
 </script>
+
+
+<script> 
+	// waco https://api.weather.gov/points/31.525,-97.1511
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/points/31.525,-97.1511");       
+geojsonLayer.addTo(map);
+
+</script>		
 		
 </body>
 
