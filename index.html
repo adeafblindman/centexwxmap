@@ -35,7 +35,7 @@
                                 }
                         ).addTo(map);
                         L.control.radar({}).addTo(map);
-			polygon.setStyle({fillColor: '#00FFFFFF'});
+
 
 			// specify polygon style for plotting
 function polystyle(feature) {
@@ -51,13 +51,11 @@ return {
 </script> 
 <script> 
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
-opacity: 1,
 geojsonLayer.addTo(map);
 
 </script>        
 <script> 
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
-opacity: 0,
 geojsonLayer.addTo(map);
 
 </script>
