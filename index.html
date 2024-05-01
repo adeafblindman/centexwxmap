@@ -66,9 +66,7 @@ new L.GeoJSON.Style(
 		"<NAME>": <VALUE>, // Optional: Properties pairs that will overwrite the geoJson flow features properties
 		style: function(feature) { // Optional
 			return {
-				"<NAME>": <VALUE>, // Properties pairs that will overwrite the geoJson flow features properties
-				"<fill>": feature.properties.<fill>, // The value can be calculated from any geoJson property for each features.
-				...
+				fill: feature.properties.fill
 			};
 		}
 	}
