@@ -46,6 +46,7 @@
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");       
 geojsonLayer.addTo(map);
 </script>
+
 <script>		
 function polystyle(feature) {
 return {
@@ -59,7 +60,7 @@ return {
 	// county polygon
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
 // add outline to map
-L.geoJSON(outline, {
+L.geojsonLayer(outline, {
     style: polystyle
 }).addTo(map);
 </script>
