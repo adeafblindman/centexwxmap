@@ -40,7 +40,7 @@
 			// specify polygon style for plotting
 function polystyle(feature) {
 return {
-    fillColor: 'blue',
+    fillColor: 'red',
     weight: 2,
     opacity: 1,
     color: 'black',  //Outline color
@@ -55,7 +55,7 @@ geojsonLayer.addTo(map);
 
 
 	// county polygon
-var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
+var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
 // add outline to map
 L.geoJSON(outline, {
     style: polystyle
