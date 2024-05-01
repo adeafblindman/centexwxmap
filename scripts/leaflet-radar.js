@@ -99,7 +99,7 @@ L.Control.Radar = L.Control.extend({
 
     toggle: function () {
         if (!this.checkbox.checked) {
-            this.setDisabled(true);
+            this.setDisabled(false);
             this.removeLayers();
             return;
         }
