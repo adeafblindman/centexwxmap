@@ -17,7 +17,7 @@ L.Control.Radar = L.Control.extend({
         transitionMs: 750,
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
-        refreshTime: 5
+        
     },
 
     onRemove: function () {
@@ -84,35 +84,7 @@ L.Control.Radar = L.Control.extend({
     hideLayerByIndex: function (index) {
         this.timeLayers[index].tileLayer.setOpacity(0);
         this.timestamp_div.innerHTML = ``;
-     this.refreshTimer(this);
-            refreshTimer: function(myThis) {
-        if( myThis.refresher == 0 ) {
-            myThis.refresher = setInterval(function(){
-                myThis.setDisabled(false);
-                if( myThis.timeLayers.length > 0 ) {
-                    myThis.removeLayers();
-                }
-                myThis.timeLayers = myThis.generateLayers();
-                myThis.addLayers(myThis.timeLayers);
-        
-                myThis.slider.max = `${myThis.timeLayers.length - 1}`;
-        
-                myThis.timeLayerIndex = 0;
-        
-                myThis.isPaused = false;
-        
-                myThis.slider.oninput = () => {
-        
-                    myThis.hideLayerByIndex(myThis.timeLayerIndex);
-                    myThis.timeLayerIndex = +myThis.slider.value;
-                    myThis.showLayerByIndex(myThis.timeLayerIndex);
-        
-                    myThis.isPaused = true;
-                };
-        
-            },myThis.options.refreshTime*60000);
-        }
-    },
+
     },
 
     showLayerByIndex: function (index) {
