@@ -41,17 +41,28 @@
 			// specify polygon style for plotting
 
 </script>
+
+<script>
+var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    var polyLayers = [];	
+// Add the layers to the drawnItems feature group 
+    for(let layer of polyLayers) {
+        drawnItems.addLayer(layer); 	
+</script>		
 <script>		
 
 	// waco https://api.weather.gov/points/31.525,-97.1511
 //var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts?zone=TXC041");	
+var geojsonLayer1 = new L.GeoJSON.AJAX("https://api.weather.gov/alerts?zone=TXC041");	
 geojsonLayer.addTo(map);
+polylayers.push(geojsonLayer1)	
 </script>
 
 <script>		
 	// County Polygon	
-var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
+var geojsonLayer2 = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
 geojsonLayer.addTo(map);
 
 </script>		
@@ -60,7 +71,7 @@ geojsonLayer.addTo(map);
 	
 <script>		
 	// fort cavazos polygon	
-var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
+var geojsonLayer3 = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
 geojsonLayer.addTo(map);
 
 </script>
