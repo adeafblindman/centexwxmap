@@ -79,6 +79,38 @@ L.Control.Radar = L.Control.extend({
         this.isPaused = false;
 
         return this.container;
+
+        //refresh timer from https://github.com/rwev/leaflet-radar/issues/5
+         this.refreshTimer(this);
+            refreshTimer: function(myThis) {
+        if( myThis.refresher == 0 ) {
+            myThis.refresher = setInterval(function(){
+                myThis.setDisabled(false);
+                if( myThis.timeLayers.length > 0 ) {
+                    myThis.removeLayers();
+                }
+                myThis.timeLayers = myThis.generateLayers();
+                myThis.addLayers(myThis.timeLayers);
+        
+                myThis.slider.max = `${myThis.timeLayers.length - 1}`;
+        
+                myThis.timeLayerIndex = 0;
+        
+                myThis.isPaused = false;
+        
+                myThis.slider.oninput = () => {
+        
+                    myThis.hideLayerByIndex(myThis.timeLayerIndex);
+                    myThis.timeLayerIndex = +myThis.slider.value;
+                    myThis.showLayerByIndex(myThis.timeLayerIndex);
+        
+                    myThis.isPaused = true;
+                };
+        
+            },myThis.options.refreshTime*60000);
+        }
+    },
+        
     },
 
     hideLayerByIndex: function (index) {
