@@ -49,6 +49,15 @@ return {
 }
 
 </script> 
+
+
+
+<script> 
+	// waco https://api.weather.gov/points/31.525,-97.1511
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/points/31.525,-97.1511");       
+geojsonLayer.addTo(map);
+
+</script>
 		
 <script> 
 	// county polygon
@@ -65,12 +74,7 @@ geojsonLayer.addTo(map);
 </script>
 
 
-<script> 
-	// waco https://api.weather.gov/points/31.525,-97.1511
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/points/31.525,-97.1511");       
-geojsonLayer.addTo(map);
-
-</script>		
+		
 		
 </body>
 
