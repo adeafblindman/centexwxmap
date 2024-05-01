@@ -25666,7 +25666,9 @@ var geojson = {
   ]
 }
 
-L.geoJSON(geojson).addTo(map)
+L.geoJSON(geojson).color(function(layer){
+	return layer.feature.properties.fill
+}.addTo(map)
 	
 </script>		
 		
