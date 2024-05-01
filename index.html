@@ -38,6 +38,15 @@
 
 
 			// specify polygon style for plotting
+
+</script>
+<script>		
+
+	// waco https://api.weather.gov/points/31.525,-97.1511
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");       
+geojsonLayer.addTo(map);
+</script>
+<script>		
 function polystyle(feature) {
 return {
     fillColor: 'red',
@@ -47,20 +56,14 @@ return {
     fillOpacity: 0.7
     };
 }
-
-
-	// waco https://api.weather.gov/points/31.525,-97.1511
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");       
-geojsonLayer.addTo(map);
-
-
 	// county polygon
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
 // add outline to map
 L.geoJSON(outline, {
     style: polystyle
 }).addTo(map);
-
+</script>
+<script>		
 	// fort cavazos polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
 geojsonLayer.addTo(map);
