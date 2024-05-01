@@ -37,13 +37,20 @@
                         L.control.radar({}).addTo(map);
 			polygon.setStyle({fillColor: '#00FFFFFF'});
                 
-</script>
-<script>
+</script> 
+<script> 
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
 opacity: 0,
 geojsonLayer.addTo(map);
 
 </script>        
+<script> 
+var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
+opacity: 0,
+geojsonLayer.addTo(map);
+
+</script>
+		
 </body>
 
 </html>
