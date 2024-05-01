@@ -25677,14 +25677,15 @@ var geojson = {
   ]
 };
 
-var countyStyle = {
-    "weight": 5,
-    "opacity": 0.2
+//var countyStyle = {
+//    "weight": 5,
+//    "opacity": 0.2
 };
-	
+	//https://www.youtube.com/watch?v=X3YsvoHqQGQ
 L.geoJSON(geojson, {
-	style: countyStyle
+	style: function (feature){
 		return{ color: feature.properties.fill};
+	}
 }).addTo(map);
 	
 </script>		
