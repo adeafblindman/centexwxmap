@@ -62,8 +62,10 @@ geojsonLayer.addTo(map);
 <script> 
 	// county polygon
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
-geojsonLayer.addTo(map);
-
+// add outline to map
+L.geoJSON(outline, {
+    style: polystyle
+}).addTo(map);
 </script>       
 	
 <script> 
