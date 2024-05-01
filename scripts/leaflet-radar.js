@@ -17,7 +17,7 @@ L.Control.Radar = L.Control.extend({
         transitionMs: 750,
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
-        refreshTime: 5
+        //refreshTime: 5
     },
 
     onRemove: function () {
