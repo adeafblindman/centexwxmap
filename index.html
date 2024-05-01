@@ -36,7 +36,18 @@
                         ).addTo(map);
                         L.control.radar({}).addTo(map);
 			polygon.setStyle({fillColor: '#00FFFFFF'});
-                
+
+			// specify polygon style for plotting
+function polystyle(feature) {
+return {
+    fillColor: 'blue',
+    weight: 2,
+    opacity: 1,
+    color: 'black',  //Outline color
+    fillOpacity: 0.7
+    };
+}
+
 </script> 
 <script> 
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES no fill.geojson");       
