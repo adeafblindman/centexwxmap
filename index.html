@@ -54,6 +54,25 @@ geojsonLayer.addTo(map);
 
 </script>		
 
+<script>
+	// new json code
+new L.GeoJSON.Style(
+	<geodata/COUNTIES no fill.geojson>, // <String> geoJson features
+	{
+		<OPTIONS>,
+		"<NAME>": <VALUE>, // Optional: Properties pairs that will overwrite the geoJson flow features properties
+		style: function(feature) { // Optional
+			return {
+				"<NAME>": <VALUE>, // Properties pairs that will overwrite the geoJson flow features properties
+				"<fill>": feature.properties.<fill>, // The value can be calculated from any geoJson property for each features.
+				...
+			};
+		}
+	}
+).addTo(map);
+
+</script>
+	
 <script>		
 	// fort cavazos polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
