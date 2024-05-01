@@ -25678,13 +25678,14 @@ var geojson = {
 };
 
 var countyStyle = {
-	"color": "blue"
+"color": "blue"
     "weight": 5,
     "opacity": 0.2
 };
 	//https://www.youtube.com/watch?v=X3YsvoHqQGQ
 L.geoJSON(geojson, {
 	style: countyStyle
+		return{ color: feature.properties.fill};
 		
 }).addTo(map);
 	
