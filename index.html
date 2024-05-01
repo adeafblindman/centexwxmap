@@ -25664,9 +25664,17 @@ var geojson = {
       "id": 21
     }
   ]
-}
+};
 
-L.geoJSON(geojson).addTo(map)
+var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+};
+	
+L.geoJSON(geojson, {
+	style: mystyle
+}).addTo(map);
 	
 </script>		
 		
