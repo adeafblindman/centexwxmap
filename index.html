@@ -48,22 +48,12 @@ geojsonLayer.addTo(map);
 </script>
 
 <script>		
-function polystyle(feature) {
-return {
-    fillColor: 'red',
-    weight: 2,
-    opacity: 1,
-    color: 'black',  //Outline color
-    fillOpacity: 0.7
-    };
-}
-	// county polygon
+	// County Polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
-// add outline to map
-L.geojsonLayer(outline, {
-    style: polystyle
-}).addTo(map);
-</script>
+geojsonLayer.addTo(map);
+
+</script>		
+
 <script>		
 	// fort cavazos polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
