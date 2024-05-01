@@ -9,9 +9,7 @@
                 <link rel="stylesheet" href="scripts/leaflet-radar.css"></script>
                 <script src="scripts/leaflet-radar.js"></script>
                 <script src="scripts/ajax.js"></script>
-		<!-- GeoJSON.Ajax plugin -->
-	<script src="src/GeoJSON.Style.js"></script>
-	<script src="src/layers/GeoJSON.Ajax.OSM.js"></script>
+
         </head>
 
         <body style="padding: 0; margin: 0;">
@@ -52,30 +50,12 @@ geojsonLayer.addTo(map);
 
 <script>		
 	// County Polygon	
-//var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
-//geojsonLayer.addTo(map);
+var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES.geojson");       
+geojsonLayer.addTo(map);
 
 </script>		
 
-<script>
-	// new json code
-new L.GeoJSON.Ajax(
-	geodata/COUNTIES no fill.geojson, // GeoJson server URL or function that returns the URL
-	{
-		
-		}
-		
-		style: function(feature) { // Optional
-			return {
-				fill: feature.properties.fill,
-				fill-opacity: feature.properties.fill-opacity
-			};
-		}
-		idAjaxStatus: optional html element #id that will be updated during loading of the map
-	}
-).addTo(map);
 
-</script>
 	
 <script>		
 	// fort cavazos polygon	
