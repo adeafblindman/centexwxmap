@@ -267,4 +267,4 @@ L.Control.Rainviewer = L.Control.extend({
 L.control.rainviewer = function (opts) {
     return new L.Control.Rainviewer(opts);
 }
-rainviewer.load(mymap) // rainviewer - rainviewer instance; mymap - leaflet map instance
+
