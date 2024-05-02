@@ -24,7 +24,7 @@ L.Control.Rainviewer = L.Control.extend({
         this.animationPosition = 0;
         this.animationTimer = false;
 
-        this.rainviewerActive = false;
+        this.rainviewerActive = true;
 
         this._map = map;
 
