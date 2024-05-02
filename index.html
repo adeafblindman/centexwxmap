@@ -37,7 +37,7 @@
                                 }
                         ).addTo(map);
                         L.control.radar({}).addTo(map);
-
+			rainviewer.load(map) // rainviewer - rainviewer instance; mymap - leaflet map instance
 
 			// specify polygon style for plotting
 
@@ -79,7 +79,7 @@ geojsonLayer.addTo(map);
         opacitySliderLabelText: "Opacity:",
         animationInterval: 500,
         opacity: 0.5,
-	rainviewer.load(map) // rainviewer - rainviewer instance; mymap - leaflet map instance
+
     }).addTo(map);
 
 </script>
