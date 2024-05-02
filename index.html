@@ -47,7 +47,7 @@
 <script>		
 
 	// waco https://api.weather.gov/points/31.525,-97.1511
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX";{
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX",{
 //var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts?zone=TXC041";{
 	onEachFeatuer: function (featuer, layer) {
 		onEachFeature: function (feature, layer) {
