@@ -34,7 +34,7 @@ L.Control.Rainviewer = L.Control.extend({
         this.link.href = '#';
         L.DomEvent.on(this.link, 'click', this.load, this);
         return this.container;
-rainviewer.load(mymap) // rainviewer - rainviewer instance; mymap - leaflet map instance
+
         /*return this.load(map);*/
 
 
@@ -267,3 +267,4 @@ rainviewer.load(mymap) // rainviewer - rainviewer instance; mymap - leaflet map 
 L.control.rainviewer = function (opts) {
     return new L.Control.Rainviewer(opts);
 }
+rainviewer.load(mymap) // rainviewer - rainviewer instance; mymap - leaflet map instance
