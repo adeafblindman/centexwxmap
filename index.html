@@ -64,21 +64,10 @@
 	
 </script>
 <script>		
-	// County Polygon	
-var geoJSON = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");      
-//geojsonLayer.addTo(map);
-
-L.geoJSON(geojson, {
-	style : function(feature){
-		return{
-
-			"color": "#FFFF00",
-			"opacity": 1
-		}
-	}
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													      
-})geoJSON.addTo(map);
-</script>	
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");      
+geojsonLayer.addTo(map);
+	
+</script>		
 <script>		
 	// County Polygon	
 //var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES_Color.geojson");      
