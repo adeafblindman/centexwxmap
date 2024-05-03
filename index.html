@@ -47,7 +47,7 @@
 <script>		
 
 	// waco https://api.weather.gov/points/31.525,-97.1511
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX";{
+//var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX";{
 //var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts?zone=TXC041";{
 //	onEachFeatuer: function (featuer, layer) {
 //		onEachFeature: function (feature, layer) {
@@ -58,12 +58,17 @@ var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?are
      //       layer.setStyle({fillColor :'#DCDCDC'}); 
  //       }
  //   }
-})geojsonLayer.addTo(map);
+//})geojsonLayer.addTo(map);
 
 
 	
 </script>
-
+<script>		
+	// County Polygon	
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");      
+geojsonLayer.addTo(map);
+	
+</script>	
 <script>		
 	// County Polygon	
 //var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES_Color.geojson");      
