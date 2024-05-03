@@ -46,16 +46,6 @@
 		
 <script>		
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-"properties": [{
-	"color_value": '#FF0000'
-	
-}]
-
-L.geojsonLayer(feature, {
-	pointToLayer: function(feature, ){
-		const color_value = feature.properties.event)
-	}};
-	
 geojsonLayer.addTo(map);
 	
 </script>		
