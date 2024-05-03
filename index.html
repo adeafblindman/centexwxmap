@@ -47,18 +47,18 @@
 <script>		
 
 	// waco https://api.weather.gov/points/31.525,-97.1511
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX",{
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX";
 //var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts?zone=TXC041";{
-	onEachFeatuer: function (featuer, layer) {
-		onEachFeature: function (feature, layer) {
-        layer.bindTooltip(feature.properties.hood);
-        if (feature.properties.hood == "Flood Warning") {
-            layer.setStyle({fillColor :'#00FF00'}); 
-        } else {
-            layer.setStyle({fillColor :'#DCDCDC'}); 
-        }
-    }
-    })geojsonLayer.addTo(map);
+//	onEachFeatuer: function (featuer, layer) {
+//		onEachFeature: function (feature, layer) {
+ //       layer.bindTooltip(feature.properties.hood);
+  //      if (feature.properties.hood == "Flood Warning") {
+   //         layer.setStyle({fillColor :'#00FF00'}); 
+    //    } else {
+     //       layer.setStyle({fillColor :'#DCDCDC'}); 
+ //       }
+ //   }
+    )geojsonLayer.addTo(map);
 
 
 	
