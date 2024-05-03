@@ -67,7 +67,17 @@
 	// County Polygon	
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");      
 geojsonLayer.addTo(map);
-	
+
+L.geoJSON(geojson, {
+	style : function(feature){
+		return{
+
+			"color": "#FFFF00",
+			"opacity": 1
+		}
+	}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													      
+}).addTo(map)	
 </script>	
 <script>		
 	// County Polygon	
