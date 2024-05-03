@@ -46,7 +46,24 @@
 		
 <script>		
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-geojsonLayer.addTo(map);
+
+	geoJSON(geojsonLayer, {
+	style : function(feature){
+		return{
+
+			"color": "#FF0000",
+			"opacity": .3
+		}
+	}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													      
+}).addTo(map)
+	
+	
+	geojsonLayer.addTo(map);
+
+
+
+
 	
 </script>		
 <script>		
