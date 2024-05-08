@@ -46,12 +46,12 @@
 		
 <script>	// weather alerts	
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-	function getColor(d) {
-    return d = Tornado Warning ? '##FF0000' :
-           d = Severe Thunderstorm Warning  ? '##FFF800' :
-           d = Tornado Watch  ? '##0063BA' :
-           d = Flood Warning  ? '##00FF00' :
-           d = Severe Thunderstorm Watch   ? '##DC770F' :;
+	function getColor(event) {
+    return event = Tornado Warning ? '##FF0000' :
+           event = Severe Thunderstorm Warning  ? '##FFF800' :
+           event = Tornado Watch  ? '##0063BA' :
+           event = Flood Warning  ? '##00FF00' :
+           event = Severe Thunderstorm Watch   ? '##DC770F' :;
            
 };
 	function style(feature) {
@@ -64,7 +64,7 @@ var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?are
         fillOpacity: 0.7
     };
 }
-L.GeoJSON.AJAX({style: style})geojsonLayer.addTo(map);
+geojsonLayer.addTo(map);
 
 
 
