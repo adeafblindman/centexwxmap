@@ -25716,6 +25716,9 @@ L.geoJSON(geojson2, {
 <script>
 	// NWS Alerts
 var geojson3 = {
+	"type": "FeatureCollection",
+  "features": [
+    {
 "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.691a124b1a2d1de5319661c5bfbe96e0729ac692.001.1",
       "type": "Feature",
       "geometry": {
@@ -25730,6 +25733,8 @@ var geojson3 = {
             [-95.3, 33.38]
           ]
         ]
+	      ]
+      }
       },
 L.geoJSON(geojson3, {
 	style : function(feature){
