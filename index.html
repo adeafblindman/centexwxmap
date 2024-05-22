@@ -25712,6 +25712,35 @@ L.geoJSON(geojson2, {
 }).addTo(map)
 
 </script>	
+
+<script>
+	// NWS Alerts
+var geojson3 = {
+"id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.691a124b1a2d1de5319661c5bfbe96e0729ac692.001.1",
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-95.3, 33.38],
+            [-94.88, 33.4099999],
+            [-94.66, 33.31],
+            [-94.66, 33.26],
+            [-94.78, 33.31],
+            [-95.3, 33.38]
+          ]
+        ]
+      },
+L.geoJSON(geojson3, {
+	style : function(feature){
+		return{
+			"color": "00FF00",
+			"opacity": .3
+		}
+	}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													      
+}).addTo(map)
+
 		
 </body>
 
