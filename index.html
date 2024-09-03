@@ -10,7 +10,7 @@
                 <script //src="scripts/leaflet-radar.js"></script>
                 <script src="scripts/ajax.js"></script>
 		<script src="scripts/leaflet.rainviewer.js"></script>
-		<script import nwa from 'https://api.weather.gov/alerts/active?area=TX'></script>
+
         </head>
 
         <body style="padding: 0; margin: 0;">
@@ -45,36 +45,9 @@
 
 		
 <script>	// weather alerts	
-//var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
+var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
 
-//geojsonLayer.addTo(map);
-
-// Create a Leaflet layer group for the geojson layer:
-var layerGroup = L.layerGroup().addTo(map);
-
-	
-// Spread each geojson feature into an array:
-var event  = [nwa.features];
- console.log(event)
-
-// Iterate the array and place each layer individually:
-event.forEach((event) => {
-  L.geoJson(event).addTo(layerGroup);
-});
-
-//document.getElementById('button').addEventListener('click', () => {
-  layerGroup.eachLayer((layer) => {
-    // *** properties.name here will probably be properties.hood for you. 
-    // This is simply retrieving the properties from the geojson:
-    var name = Object.values(layer._layers)[0].feature.properties.name;
-     console.log(Object.values(layer._layers)[0].feature.properties.name);
-    if (name === 'Flood Advisory') {
-      layer.setStyle(() => ({ color: 'green', fillColor: 'green' }));
-    }
-    
-  });
-;
-//
+geojsonLayer.addTo(map);
 	
 </script>		
 
