@@ -54,7 +54,7 @@ var event  = [geojsonLayer.features];
 
 // Iterate the array and place each layer individually:
 event.forEach((event) => {
-  L.geoJson(region).addTo(layerGroup);
+  L.geoJson(event).addTo(layerGroup);
 });
 
 document.getElementById('button').addEventListener('click', () => {
