@@ -46,9 +46,32 @@
 		
 <script>	// weather alerts	
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-
 geojsonLayer.addTo(map);
 
+// Spread each geojson feature into an array:
+var event  = [geojsonLayer.features];
+ console.log(event)
+
+// Iterate the array and place each layer individually:
+regions.forEach((region) => {
+  L.geoJson(region).addTo(layerGroup);
+});
+
+document.getElementById('button').addEventListener('click', () => {
+  layerGroup.eachLayer((layer) => {
+    // *** properties.name here will probably be properties.hood for you. 
+    // This is simply retrieving the properties from the geojson:
+    var name = Object.values(layer._layers)[0].feature.properties.name;
+     console.log(Object.values(layer._layers)[0].feature.properties.name);
+    if (name === 'Flood Advisory') {
+      layer.setStyle(() => ({ color: 'green', fillColor: 'green' }));
+    }
+    
+    }
+  });
+});
+//
+	
 </script>		
 
 <script>		
