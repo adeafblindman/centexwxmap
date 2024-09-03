@@ -60,7 +60,7 @@ event.forEach((event) => {
   L.geoJson(event).addTo(layerGroup);
 });
 
-document.getElementById('button').addEventListener('click', () => {
+//document.getElementById('button').addEventListener('click', () => {
   layerGroup.eachLayer((layer) => {
     // *** properties.name here will probably be properties.hood for you. 
     // This is simply retrieving the properties from the geojson:
@@ -71,7 +71,7 @@ document.getElementById('button').addEventListener('click', () => {
     }
     
   });
-});
+//});
 //
 	
 </script>		
