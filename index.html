@@ -10,7 +10,7 @@
                 <script //src="scripts/leaflet-radar.js"></script>
                 <script src="scripts/ajax.js"></script>
 		<script src="scripts/leaflet.rainviewer.js"></script>
-
+		<script import nwa from 'https://api.weather.gov/alerts/active?area=TX'></script>
         </head>
 
         <body style="padding: 0; margin: 0;">
@@ -46,8 +46,8 @@
 		
 <script>	// weather alerts	
 //var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
-import nwa from 'https://api.weather.gov/alerts/active?area=TX';
-geojsonLayer.addTo(map);
+
+//geojsonLayer.addTo(map);
 
 // Create a Leaflet layer group for the geojson layer:
 var layerGroup = L.layerGroup().addTo(map);
