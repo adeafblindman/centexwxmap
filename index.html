@@ -48,6 +48,9 @@
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
 geojsonLayer.addTo(map);
 
+// Create a Leaflet layer group for the geojson layer:
+var layerGroup = L.layerGroup().addTo(mymap);
+	
 // Spread each geojson feature into an array:
 var event  = [geojsonLayer.features];
  console.log(event)
