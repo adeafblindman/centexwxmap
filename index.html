@@ -46,18 +46,26 @@
 		
 <script>	// weather alerts	
 var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
+//event color
+function getColor(event) {
+    return Special Weather Statement 'yellow' :
+           Flood Warning '#BD0026';
+}
 
+	
 // poly colors test
 function style(event) {
     return {
         fillColor: getColor(feature.properties.event),
         weight: 2,
         opacity: 1,
-        color: 'green',
+        color: 'black',
         dashArray: '3',
         fillOpacity: 0.7
     };
+
 }
+
 
 	
 geojsonLayer.addTo(map);
