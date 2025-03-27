@@ -67,33 +67,42 @@ function getColor(eventType) {
         default: return "gray"; // Default for other event types
     }
 }
-// Modify your Leaflet geoJSON layer to use dynamic coloring
-fetch("https://api.weather.gov/alerts/active?area=TX")
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: function(feature) {
-                return {
-                    color: "black",
-                    weight: 2,
-                    fillColor: getColor(feature.properties.event), // Color based on event type
-                    fillOpacity: 0.6
-                };
-            },
-            onEachFeature: function(feature, layer) {
-                let props = feature.properties;
-                let popupContent = `<b>${props.event}</b><br>
-                                    <b>Severity:</b> ${props.severity}<br>
-                                    <b>Expires:</b> ${props.expires}<br>
-                                    <p>${props.description}</p>`;
-                layer.bindPopup(popupContent);
+// Function to fetch and update the GeoJSON layer
+function updateWeatherAlerts() {
+    fetch("https://api.weather.gov/alerts/active?area=TX")
+        .then(response => response.json())
+        .then(data => {
+            if (geojsonLayer) {
+                map.removeLayer(geojsonLayer); // Remove existing layer
             }
-        }).addTo(map);
-    })
-    .catch(error => console.error("Error fetching GeoJSON:", error));
 
-	
-//geojsonLayer.addTo(map);
+            geojsonLayer = L.geoJSON(data, {
+                style: function(feature) {
+                    return {
+                        color: "black",
+                        weight: 2,
+                        fillColor: getColor(feature.properties.event), // Dynamic color
+                        fillOpacity: 0.6
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    let props = feature.properties;
+                    let popupContent = `<b>${props.event}</b><br>
+                                        <b>Severity:</b> ${props.severity}<br>
+                                        <b>Expires:</b> ${props.expires}<br>
+                                        <p>${props.description}</p>`;
+                    layer.bindPopup(popupContent);
+                }
+            }).addTo(map);
+        })
+        .catch(error => console.error("Error fetching GeoJSON:", error));
+}
+
+// Initial fetch when the page loads
+updateWeatherAlerts();
+
+// Refresh the GeoJSON data every 2 minutes
+setInterval(updateWeatherAlerts, 120000);
 
 
 
