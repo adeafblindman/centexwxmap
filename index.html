@@ -50,11 +50,19 @@
 // Function to determine color based on event type
 function getColor(eventType) {
     switch (eventType) {
-        case "Severe Thunderstorm Warning": return "#FFF800";
+        case "Severe Thunderstorm Watch": return "#DC770F";
+	case "Severe Thunderstorm Warning": return "#FFF800";
+		    
 	case "Tornado Watch": return "#0063BA";	    
         case "Tornado Warning": return "#FF0000";
-        case "Flash Flood Warning": return "purple";
-        case "Winter Storm Warning": return "blue";
+		    
+	case "Flood Warning": return "#00FF00";
+        case "Flash Flood Warning": return "#00FF00";
+
+	case "Hurricane Watch": return "#FF00FF";	    
+	case "Inland Hurricane Watch": return "#FF00FF";
+		    
+        case "Winter Storm Warning": return "FF69B4";
         case "High Wind Warning": return "yellow";
         default: return "gray"; // Default for other event types
     }
