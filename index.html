@@ -45,10 +45,43 @@
 
 		
 <script>	// weather alerts	
-var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
+//var geojsonLayer = new L.GeoJSON.AJAX("https://api.weather.gov/alerts/active?area=TX");
 //event color
-
-
+// Function to determine color based on event type
+function getColor(eventType) {
+    switch (eventType) {
+        case "Severe Thunderstorm Warning": return "orange";
+        case "Tornado Warning": return "red";
+        case "Flash Flood Warning": return "purple";
+        case "Winter Storm Warning": return "blue";
+        case "High Wind Warning": return "yellow";
+        default: return "gray"; // Default for other event types
+    }
+}
+// Modify your Leaflet geoJSON layer to use dynamic coloring
+fetch("https://api.weather.gov/alerts/active?area=TX")
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: function(feature) {
+                return {
+                    color: "black",
+                    weight: 2,
+                    fillColor: getColor(feature.properties.event), // Color based on event type
+                    fillOpacity: 0.6
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                let props = feature.properties;
+                let popupContent = `<b>${props.event}</b><br>
+                                    <b>Severity:</b> ${props.severity}<br>
+                                    <b>Expires:</b> ${props.expires}<br>
+                                    <p>${props.description}</p>`;
+                layer.bindPopup(popupContent);
+            }
+        }).addTo(map);
+    })
+    .catch(error => console.error("Error fetching GeoJSON:", error));
 
 	
 geojsonLayer.addTo(map);
