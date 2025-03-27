@@ -18,20 +18,6 @@ L.Control.Radar = L.Control.extend({
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
 
-// refresh code 
-        refreshRadar: function () {
-    if (!this.checkbox.checked) return; // Don't refresh if radar is off
-
-    this.removeLayers(); // Remove existing layers
-    this.timeLayers = this.generateLayers(); // Generate new layers
-    this.addLayers(this.timeLayers); // Add new layers
-
-    this.slider.max = `${this.timeLayers.length - 1}`;
-    this.timeLayerIndex = 0;
-
-    console.log("Radar layers refreshed.");
-},
-
         
     },
 
@@ -120,15 +106,7 @@ L.Control.Radar = L.Control.extend({
             this.removeLayers();
             return;
 
-    // auto refresh
-            // Refresh radar data every minute (60,000 ms)
-            this.refreshInterval = setInterval(() => this.refreshRadar(), 60000);
-            if (!this.checkbox.checked) {
-    this.setDisabled(true);
-    this.removeLayers();
-
-    clearInterval(this.refreshInterval); // Stop refreshing
-    return;
+    
 }
 
 
