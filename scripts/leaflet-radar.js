@@ -17,8 +17,6 @@ L.Control.Radar = L.Control.extend({
         transitionMs: 750,
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
-
-        
     },
 
     onRemove: function () {
@@ -85,7 +83,6 @@ L.Control.Radar = L.Control.extend({
     hideLayerByIndex: function (index) {
         this.timeLayers[index].tileLayer.setOpacity(0);
         this.timestamp_div.innerHTML = ``;
-
     },
 
     showLayerByIndex: function (index) {
@@ -105,11 +102,6 @@ L.Control.Radar = L.Control.extend({
             this.setDisabled(true);
             this.removeLayers();
             return;
-
-    
-}
-
-
         }
 
         this.setDisabled(false);
