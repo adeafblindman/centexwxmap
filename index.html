@@ -71,7 +71,6 @@ function getColor(eventType) {
 // Function to fetch and update the GeoJSON layer
 function updateWeatherAlerts() {
     fetch("https://api.weather.gov/alerts/active?area=TX")	
-    fetch("https://api.weather.gov/alerts/active?area=CA")
         .then(response => response.json())
         .then(data => {
             if (geojsonLayer) {
