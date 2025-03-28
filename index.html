@@ -104,29 +104,14 @@ updateWeatherAlerts();
 // Refresh the GeoJSON data every 2 minutes
 setInterval(updateWeatherAlerts, 120000);
 
-
-
-
-
-
-
-
-
 	
 </script>		
 
-<script>		
-	// County Polygon	
-//var geojsonLayer = new L.GeoJSON.AJAX("geodata/COUNTIES_Color.geojson");      
-//geojsonLayer.addTo(map);
 	
-</script>		
-
-
 	
 <script>		
 	// fort cavazos polygon	
-//var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
+var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
 geojsonLayer.addTo(map);
 
 </script>
