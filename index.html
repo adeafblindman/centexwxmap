@@ -126,7 +126,7 @@ setInterval(updateWeatherAlerts, 120000);
 	
 <script>		
 	// fort cavazos polygon	
-var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
+//var geojsonLayer = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
 geojsonLayer.addTo(map);
 
 </script>
@@ -149,6 +149,8 @@ geojsonLayer.addTo(map);
 
 
 <script>
+var geojsonLayer2 = new L.GeoJSON.AJAX("geodata/Fort Cavazos.geojson");       
+	
 	// KXXV counties -- https://removelinebreaks.net/
 var geojson = {
   "type": "FeatureCollection",
