@@ -73,9 +73,9 @@ function updateWeatherAlerts() {
     fetch("https://api.weather.gov/alerts/active?area=TX")	
         .then(response => response.json())
         .then(data => {
-            if (geojsonLayer) {
-                map.removeLayer(geojsonLayer); // Remove existing layer
-            }
+           // if (geojsonLayer) {
+         //       map.removeLayer(geojsonLayer); // Remove existing layer
+         //   }
 
             geojsonLayer = L.geoJSON(data, {
                 style: function(feature) {
