@@ -26,9 +26,7 @@
 			});
 
 
-			var overlayMaps = {
-			"RoofCams": RoofCams
-			};
+
                         var osmAttribution =
                                 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
                         var leafletRadarAttribution =
@@ -127,6 +125,10 @@ var Killeen_Center_marker = L.marker([31.093150763328353, -97.72280802921048]).a
 var Deadfish_marker = L.marker([31.10501570952288, -97.47845527728362]).addTo(map).bindPopup('<img src="https://mediaassets.kxxv.com/weatherimages/BeltonWxCam.jpg" style="width:300px">');
 	
 var RoofCams = L.layerGroup([Waco_marker, Killeen_Airport_marker, Harker_marker, Bryan_marker, Killeen_Chevy_marker, Killeen_Center_marker, Deadfish_marker]);
+
+var overlayMaps = {
+"RoofCams": RoofCams
+};
 	
 </script>		
 
